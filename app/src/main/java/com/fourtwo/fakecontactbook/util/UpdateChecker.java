@@ -24,6 +24,7 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public final class UpdateChecker {
+
     /*
      * 正式项目使用这个：
      */

@@ -35,6 +35,7 @@ import com.fourtwo.fakecontactbook.model.FakeContact;
 import com.fourtwo.fakecontactbook.model.InstalledApp;
 import com.fourtwo.fakecontactbook.store.ConfigStore;
 import com.fourtwo.fakecontactbook.util.VcfParser;
+import com.fourtwo.fakecontactbook.util.UpdateChecker;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -117,6 +118,7 @@ public class MainActivity extends AppCompatActivity {
         setupBottomNavigation();
 
         showHome();
+        UpdateChecker.checkOnFirstLaunch(this);
         refreshXposedProviderStatus();
     }
 

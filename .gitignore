@@ -3,6 +3,7 @@
 /.idea
 .DS_Store
 /build
+/app/src/main/java/com/fourtwo/fakecontactbook/xposedmodels
 /captures
 .externalNativeBuild
 .cxx

@@ -1,0 +1,9 @@
+<resources>
+    <color name="fc_primary">#4361EE</color>
+    <color name="fc_primary_dark">#2945C7</color>
+    <color name="fc_secondary">#00B4D8</color>
+    <color name="fc_background">#F6F8FF</color>
+    <color name="fc_surface">#FFFFFF</color>
+    <color name="fc_text_primary">#101828</color>
+    <color name="fc_text_secondary">#667085</color>
+</resources>

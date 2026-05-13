@@ -1,0 +1,51 @@
+apply plugin: 'com.android.application'
+
+android {
+    namespace 'com.fourtwo.fakecontactbook'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId 'com.fourtwo.fakecontactbook'
+
+        // Xposed 模块没必要追很高的 targetSdk。
+        // targetSdk 28 还能避免 Android 11+ 包可见性限制影响“加载所有应用”。
+        minSdk 23
+        targetSdk 28
+
+        versionCode 1
+        versionName '1.0'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+
+        release {
+            minifyEnabled false
+        }
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+}
+
+dependencies {
+    // 你的 XposedBridgeAPI-89.jar 放这里：
+    // app/libs/XposedBridgeAPI-89.jar
+    compileOnly fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "org.nanohttpd:nanohttpd:2.3.1"
+    // 这里故意不用太新的 AndroidX，避免 AGP 8.0.1 + compileSdk 33 报 AndroidX metadata 错误
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'androidx.recyclerview:recyclerview:1.3.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.9.0'
+}
